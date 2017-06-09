@@ -1,0 +1,8 @@
+language: node_js
+node_js: '7'
+script: npm run build
+before_deploy: rm -rf node_modules/
+deploy:
+  provider: heroku
+  skip_cleanup: true
+  app: <your-app-here>

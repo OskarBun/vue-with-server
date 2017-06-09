@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- title -->
+	<title>Tempo</title>
+
+    <!-- metas -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- site description -->
+    <meta name="description" content="Travel planning app prototype website." />
+    <meta name="keywords"    content="travel, travelo, planning" />
+    <meta name="author"      content="Oskar Bunyan" />
+    <meta name="version"     content="1.0" />
+
+    <!-- mobile fixes -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="HandheldFriendly" content="true" />
+
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+
+    <!-- Normalize -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.css" rel="stylesheet" type="text/css">
+
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet"  type="text/css">
+
+    <!-- Linearicons -->
+    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+
+    <!-- loading state CSS -->
+    <link rel="stylesheet" type="text/css" href="loading.css"/>
+</head>
+<body>
+	<div id="Main">
+        <!-- app root hidden while loading content -->
+        <div id="App" v-cloak></div>
+
+        <!-- loading placeholder -->
+        <div class="loader" v-cloak>
+            <div class="loader-content">
+                <div class="signal"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- load app -->
+	<script src="/dist/build.js"></script>
+</body>
+</html>
