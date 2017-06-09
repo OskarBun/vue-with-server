@@ -51,29 +51,15 @@ export default {
             if(event.data === 'pong') return;
             const resp = JSON.parse(event.data);
             if(resp.id === null){
-                const topics = resp.topic.split('/'),
-                      topic = topics[0],
-                      id    = topics[1],
-                      sub_topic = topics[2],
-                      sub_id    = topics[3];
-                if(store.state[topic] && sub_topic===undefined){
-                    store.commit("set_"+topic, resp.result);
-                } else {
-                    if(!sub_id){
-                        store.commit("set_destinations", resp.result)
-                    } else {
-                        store.commit("push_"+sub_topic, resp.result);
-                    }
-                }
-                if(topic === "user"){
-                    store.commit("set_trip_user", resp.result)
-                }
+                //This is where broadcasts arrive
+                console.log(resp);
             } else if(resp.id === 0) {
                 console.log(resp.message)
                 if(resp.user){
                     store.commit("set_user", resp.user);
                 }
             } else if(outs[resp.id] === undefined) {
+                console.log(resp);
                 console.error("Could not find response id")
             } else if(resp.error){
                 outs[resp.id].reject(resp.error)

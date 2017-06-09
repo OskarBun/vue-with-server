@@ -6,7 +6,7 @@ const fs = require('fs');
 
 //Local
 const rpc = require('./lib/rpc')
-const broadcast = require('./lib/broadcast')
+const broadcast = require('./lib/pubsub')
 
 //Create app
 const app = ws(new Koa())
@@ -61,9 +61,11 @@ app.ws.use(async ctx => {
         ctx.websocket.send(JSON.stringify(resp))
 
         //Tell everyone about it
-        resp.id = null;
-        resp.topic = topic;
-        ctx.broadcast.emit(topic, JSON.stringify(resp))
+        if(topic) {
+            resp.id = null;
+            resp.topic = topic;
+            ctx.broadcast.emit(topic, JSON.stringify(resp))
+        }
     }});
 
     ctx.websocket.on('close', () => {

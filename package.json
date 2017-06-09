@@ -19,6 +19,7 @@
     "koa-serve-static": "^1.0.0",
     "koa-websocket": "^4.0.0",
     "mysql": "^2.13.0",
+    "node-redis-pubsub": "github:louischatriot/node-redis-pubsub#pull/41/head",
     "sequelize": "^3.30.4",
     "sqlite3": "^3.1.8"
   },
