@@ -3,7 +3,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 // –– Websocket
-import ws from '../ws';
+import {vuex_ws} from '../ws';
 // –– Models
 
 
@@ -17,7 +17,7 @@ const store = new Vuex.Store({
     modules: {
 
     },
-    plugins: [ws.vuex]
+    plugins: [vuex_ws]
 })
 
 export default store
